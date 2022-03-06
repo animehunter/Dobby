@@ -59,6 +59,7 @@ static int check_log_file_available() {
   return 0;
 }
 
+#if !defined(LOGGING_DISABLE)
 INTERNAL int log_internal_impl(unsigned int level, const char *fmt, ...) {
   if (level < _log_level)
     return 0;
@@ -104,3 +105,5 @@ INTERNAL int log_internal_impl(unsigned int level, const char *fmt, ...) {
   va_end(ap);
   return 0;
 }
+#endif
+
