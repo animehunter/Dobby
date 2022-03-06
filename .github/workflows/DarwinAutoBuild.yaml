@@ -1,9 +1,6 @@
 name: Darwin Auto Build
 
-on:
-  push:
-    branches:
-      - master
+on: [workflow_dispatch]
 
 jobs:
   default:
@@ -26,6 +23,13 @@ jobs:
         ls -lha .
         echo "output=$DOBBY_BUILD_OUTPUT_NAME"
 
+    - name: upload artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: static-libraries
+        path: ${{ env.DOBBY_BUILD_OUTPUT_NAME }}
+    
+    
     - name: Delete old release assets
       uses: mknejp/delete-release-assets@v1
       with:

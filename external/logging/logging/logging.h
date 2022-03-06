@@ -20,7 +20,12 @@ void log_switch_to_file(const char *path);
 int log_internal_impl(int level, const char *, ...);
 
 #if defined(LOGGING_DISABLE)
-#define LOG_FUNCTION_IMPL(...)
+
+  #if defined(LOG_FUNCTION_IMPL)
+    #undef LOG_FUNCTION_IMPL
+  #endif
+  
+  #define LOG_FUNCTION_IMPL(...)
 #endif
 
 #ifdef __cplusplus
