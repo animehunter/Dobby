@@ -6,16 +6,9 @@
 
 #include "Interceptor.h"
 
-__attribute__((constructor)) static void ctor() {
-  DLOG(-1, "================================");
-  DLOG(-1, "Dobby");
-  DLOG(-1, "================================");
-
-  DLOG(-1, "dobby in debug log mode, disable with cmake flag \"-DDOBBY_DEBUG=OFF\"");
-}
 
 PUBLIC const char *DobbyBuildVersion() {
-  return __DOBBY_BUILD_VERSION__;
+  return "";
 }
 
 PUBLIC int DobbyDestroy(void *address) {
