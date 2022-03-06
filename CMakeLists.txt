@@ -59,6 +59,9 @@ if(DOBBY_DEBUG)
   add_definitions(-DDOBBY_DEBUG)
   add_definitions(-DLOGGING_DEBUG)
   message(STATUS "[Dobby] Enable debug logging")
+else()
+  add_definitions(-DLOGGING_DISABLE)
+  message(STATUS "[Dobby] Disable debug logging")
 endif()
 
 # Enable full floating point register pack
