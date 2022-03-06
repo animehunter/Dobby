@@ -27,7 +27,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: static-libraries
-        path: $DOBBY_BUILD_OUTPUT_NAME
+        path: ${{ env.DOBBY_BUILD_OUTPUT_NAME }}
     
     
     - name: Delete old release assets
