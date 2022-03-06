@@ -10,7 +10,7 @@ __attribute__((constructor)) static void ctor() {
 }
 
 PUBLIC const char *DobbyBuildVersion() {
-  return __DOBBY_BUILD_VERSION__;
+  return "";
 }
 
 PUBLIC int DobbyDestroy(void *address) {
