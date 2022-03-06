@@ -4,7 +4,6 @@
 #define OFFSETOF(TYPE, ELEMENT) ((size_t) & (((TYPE *)0)->ELEMENT))
 
 // assert
-#include <assert.h>
 #define ASSERT(X)
 
 // left/right shift
